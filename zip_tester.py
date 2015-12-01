@@ -52,15 +52,15 @@ if output:
 
 for file in os.listdir(directory):
     if zipfile.is_zipfile(file):
-        zip = zipfile.ZipFile(file,'r')
-        ret = zip.testzip()
-        if ret is not None:
+        z = zipfile.ZipFile(file,'r')
+        if z.testzip() is not None:
             print "%s file is CORRUPTED" % file
             if output:
                 outfile.write('%s \n' % file)
         else:
             if verbose:
                 print "%s file is OK" % file
+        z.close()
     else:
         if verbose:        
             print "%s is not a zipfile" % file
