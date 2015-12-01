@@ -7,7 +7,9 @@ This is a little python program to check the integrity of zip files. It uses sev
 
 -o <path_to_file> to output in a text file the corrupted files
 
--v to run verbose
+-v verbose output
+
+-h show program's help
 
 
 To-do:
